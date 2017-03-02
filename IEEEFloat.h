@@ -17,9 +17,9 @@ public:
      * Example: Representing 53.01234 as it would be in memory as an IEEE float
      *      - Proper function call: toFloat(53, 0.01234);
      *
-     * @param integer is everything left of the decimal point of a number you want represented as an IEEE flaot
-     * @param decimal is everything right of the decimal point of a number you want represented as an IEEE float
-     * @return a string containing the binary (IEEE) representation of a number you want represented as an IEEE float
+     * @param integer is everything left of the decimal point of the number you want represented as an IEEE flaot
+     * @param decimal is everything right of the decimal point of the number you want represented as an IEEE float
+     * @return a string containing the binary (IEEE) representation of the number you want represented as an IEEE float
      */
     static std::string toFloat(int const &integer, double const &decimal);
 
