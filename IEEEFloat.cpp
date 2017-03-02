@@ -74,7 +74,7 @@ void IEEEFloat::decAppendMantissa(std::vector<int> &mantissa, double const &deci
         if (tempDec > 1) {
             mantissa.push_back(1);
             tempDec -= 1;
-            if (tempDec < 1) tempDec -= 0.00001;
+            if (tempDec > 1) tempDec -= 0.00001;
         } else mantissa.push_back(0);
     }
 }
@@ -89,7 +89,7 @@ void IEEEFloat::decToMantissa(std::vector<int> &mantissa, int &exponent, double 
         if (tempDec > 1) {
             mantissa.push_back(1);
             tempDec -= 1;
-            if (tempDec < 1) tempDec -= 0.00001;
+            if (tempDec > 1) tempDec -= 0.00001;
         } else mantissa.push_back(0);
     }
 
