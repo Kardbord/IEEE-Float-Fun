@@ -8,6 +8,7 @@
 #include <cmath>
 #include "IEEEFloat.h"
 
+// TODO: Make this work for reaaaaaally small decimals
 std::string IEEEFloat::toFloat(int const &integer, double const &decimal) {
 
     if (decimal > 1 && decimal < -1) {
