@@ -24,18 +24,24 @@ std::string IEEEFloat::toFloat(int const &integer, double const &decimal = 0) {
 
     decToMantissa(mantissa, decimal);
 
-    int exponent = (binInt.size() > 0) ? (int) (binInt.size() - 1) : 0;
-    exponent += M_BIAS;
-    std::string binExponent = std::bitset<M_EXPONENT_BITS>((unsigned long long int) exponent).to_string();
+    if (binInt.size() > 0) {
+        int exponent = (int) (binInt.size() - 1);
+        exponent += M_BIAS;
+        std::string binExponent = std::bitset<M_EXPONENT_BITS>((unsigned long long int) exponent).to_string();
 
-    std::stringstream ss;
+        std::stringstream ss;
 
-    ss << signBit << binExponent;
-    for (auto &&bit : mantissa) {
-        ss << bit;
+        ss << signBit << binExponent;
+        for (auto &&bit : mantissa) {
+            ss << bit;
+        }
+        return ss.str();
+
+    } else {
+
     }
 
-    return ss.str();
+
 }
 
 void IEEEFloat::decToMantissa(std::vector<int> &mantissa, double const &decimal) {
@@ -58,5 +64,3 @@ void IEEEFloat::decToMantissa(std::vector<int> &mantissa, double const &decimal)
         } else mantissa.push_back(0);
     }
 }
-
-void
