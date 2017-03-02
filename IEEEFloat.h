@@ -43,7 +43,9 @@ private:
 
     static const int M_BIAS = 127;
 
-    static void decToMantissa(std::vector<int> &mantissa, double const &decimal);
+    static void decAppendMantissa(std::vector<int> &mantissa, double const &decimal);
+
+    static void decToMantissa(std::vector<int> &mantissa, int & exponent, double const &decimal);
 };
 
 
