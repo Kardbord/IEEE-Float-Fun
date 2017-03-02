@@ -5,13 +5,14 @@
 #include <bitset>
 #include <sstream>
 #include <iostream>
+#include <cmath>
 #include "IEEEFloat.h"
 
 std::string IEEEFloat::toFloat(int const &integer, double const &decimal = 0) {
     int signBit = 0;
     if (integer < 0) signBit = 1;
 
-    std::string binInt = std::bitset<M_REGISTER_BITS>((unsigned long long int) integer).to_string();
+    std::string binInt = std::bitset<M_REGISTER_BITS>((unsigned long long int) std::abs(integer)).to_string();
     binInt.erase(0, binInt.find_first_not_of('0'));
 
     std::vector<int> mantissa;
@@ -23,7 +24,7 @@ std::string IEEEFloat::toFloat(int const &integer, double const &decimal = 0) {
 
     decToMantissa(mantissa, decimal);
 
-    int exponent = (int) (binInt.size() - 1);
+    int exponent = (binInt.size() > 0) ? (int) (binInt.size() - 1) : 0;
     exponent += M_BIAS;
     std::string binExponent = std::bitset<M_EXPONENT_BITS>((unsigned long long int) exponent).to_string();
 
@@ -57,3 +58,5 @@ void IEEEFloat::decToMantissa(std::vector<int> &mantissa, double const &decimal)
         } else mantissa.push_back(0);
     }
 }
+
+void
