@@ -8,7 +8,19 @@
 #include <cmath>
 #include "IEEEFloat.h"
 
-std::string IEEEFloat::toFloat(int const &integer, double const &decimal = 0) {
+std::string IEEEFloat::toFloat(int const &integer, double const &decimal) {
+
+    if ((integer < 1 && integer > -1) || (decimal > 1 && decimal < -1)){
+        throw "Parameters are not as promised -- one of the following occurred:\n"
+                "1. -1 < integer < 1 is illegal parameter\n"
+                "2. -1 < decimal > 1 is illegal parameter\n";
+    }
+
+    if (integer == 0 && decimal == 0) {
+        std::string theFloat = std::bitset<M_REGISTER_BITS>(0).to_string();
+        return theFloat;
+    }
+
     int signBit = 0;
     if (integer < 0) signBit = 1;
 
