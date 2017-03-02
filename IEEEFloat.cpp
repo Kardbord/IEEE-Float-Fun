@@ -10,10 +10,9 @@
 
 std::string IEEEFloat::toFloat(int const &integer, double const &decimal) {
 
-    if (decimal > 1 && decimal < -1){
-        throw "Parameters are not as promised -- one of the following occurred:\n"
-                "1. -1 < integer < 1 is illegal parameter\n"
-                "2. -1 < decimal > 1 is illegal parameter\n";
+    if (decimal > 1 && decimal < -1) {
+        throw "Parameters are not as promised:\n"
+                "-1 < decimal > 1 is illegal parameter\n";
     }
 
     if (integer == 0 && decimal == 0) {
