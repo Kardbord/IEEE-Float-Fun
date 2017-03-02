@@ -93,8 +93,6 @@ void IEEEFloat::decAppendMantissa(std::vector<int> &mantissa, double const &deci
 void IEEEFloat::decToMantissa(std::vector<int> &mantissa, int &exponent, double const &decimal) {
     double tempDec = decimal;
 
-    if (decimal == 0) return; // TODO: check for empty mantissa on return
-
     while (mantissa.size() < M_MANTISSA_BITS) {
         tempDec *= 2;
         if (tempDec > 1) {

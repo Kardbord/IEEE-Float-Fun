@@ -4,7 +4,7 @@
 
 int main() {
     try{
-        std::string test = IEEEFloat::toFloat(0, 0.214579);
+        std::string test = IEEEFloat::toFloat(0, 0.214572);
         std::cout << test << std::endl;
     } catch (const char* msg){
         std::cerr << msg;
