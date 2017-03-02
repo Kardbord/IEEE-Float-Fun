@@ -1,0 +1,66 @@
+<<<<<<< HEAD
+# Compiled Object files
+**/*.slo
+**/*.lo
+**/*.o
+
+# Precompiled Headers
+**/*.gch
+**/*.pch
+
+# Compiled Dynamic libraries
+**/*.so
+**/*.dylib
+**/*.dll
+
+# Fortran module files
+**/*.mod
+**/*.smod
+
+# Compiled Static libraries
+**/*.lai
+**/*.la
+**/*.lib
+
+# Executables
+**/*.out
+**/*.app
+=======
+#ignore .idea
+**/.idea/tasks.xml
+**/.idea/*.iml
+**/.idea/inspectionProfiles
+**/.idea/modules.xml
+**/.idea/misc.xml
+
+#ignore thumbnails created by windows
+**/Thumbs.db
+#Ignore files build by Visual Studio
+**/*.user
+**/*.aps
+**/*.vspscc
+**/*_i.c
+**/*_p.c
+**/*.ncb
+**/*.suo
+**/*.tlb
+**/*.tlh
+**/*.bak
+**/*.cache
+**/*.ilk
+**/[Bb]in
+**/*.sbr
+**/obj/
+**/Deploy/
+**/_ReSharper*/
+**/[Tt]est[Rr]esult*
+**/.DS_Store
+**/Package.txt
+**/[Pp]ackages/
+**/cmake-build-debug/
+**/UML/*.bak
+**/UML/.AnalystComparer.vpp.lck
+**/*.vpp.bak_*
+**/*.dia~
+**/*.dia.autosave
+>>>>>>> intToFloat/master
