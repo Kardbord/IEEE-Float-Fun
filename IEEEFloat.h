@@ -45,7 +45,7 @@ private:
 
     static void decAppendMantissa(std::vector<int> &mantissa, double const &decimal);
 
-    static void decToMantissa(std::vector<int> &mantissa, int & exponent, double const &decimal);
+    static void decToMantissa(std::vector<int> &mantissa, int &exponent, double const &decimal);
 };
 
 
