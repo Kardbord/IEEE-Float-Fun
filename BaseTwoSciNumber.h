@@ -8,17 +8,20 @@
 
 class BaseTwoSciNumber {
 public:
-    BaseTwoSciNumber(float num);
+    BaseTwoSciNumber(float const &num);
 
-    BaseTwoSciNumber(double num);
+    BaseTwoSciNumber(double const &num);
 
-    BaseTwoSciNumber(int exp, int coef);
+    BaseTwoSciNumber(int const &exp, double const &coef);
 
 private:
-    int exponent;
-    int base = 2;
-    double coefficient;
+    int m_exponent;
+    int m_base = 2;
+    double m_coefficient;
 
+    void toBaseTwoSci(double const &num);
+
+    void toBaseTwoSci(float const &num);
 };
 
 
