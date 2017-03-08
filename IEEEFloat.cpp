@@ -4,8 +4,6 @@
 
 #include <bitset>
 #include <sstream>
-#include <iostream>
-#include <cmath>
 #include "IEEEFloat.h"
 
 std::string IEEEFloat::toFloat(int const &integer, double const &decimal) {
