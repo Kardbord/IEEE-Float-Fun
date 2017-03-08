@@ -21,7 +21,7 @@ public:
      * @param decimal is everything right of the decimal point of the number you want represented as an IEEE float
      * @return a string containing the binary (IEEE) representation of the number you want represented as an IEEE float
      */
-    static std::string toFloat(int const &integer, double const &decimal);
+    static std::string toFloat(double const &num);
 
     static int getRegisterBits() { return M_REGISTER_BITS; }
 
@@ -46,6 +46,8 @@ private:
     static void decAppendMantissa(std::vector<int> &mantissa, double const &decimal);
 
     static void decToMantissa(std::vector<int> &mantissa, int &exponent, double const &decimal);
+
+    static int computeSignBit(double const &num);
 };
 
 
