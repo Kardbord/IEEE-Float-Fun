@@ -6,13 +6,15 @@
 #include <sstream>
 #include "IEEEFloat.h"
 
-static std::string toFloat(double const &num) {
+std::string IEEEFloat::toFloat(double const &num) {
+    std::string signBit = computeSignBit(num);
 
+    return "";
 }
 
 std::string IEEEFloat::computeSignBit(double const &num) {
-    if (num < 0) return 1;
-    else return 0;
+    if (num < 0) return "1";
+    else return "0";
 }
 
 
