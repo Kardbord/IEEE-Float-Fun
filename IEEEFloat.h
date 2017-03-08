@@ -7,21 +7,18 @@
 
 #include <vector>
 
+// TODO: add documentation
 class IEEEFloat {
 public:
 
     /**
-     * Takes, in two parts (see params), a number and returns a string containing the IEEE 32-bit binary representation
-     * of that number.
+     * Given a number, returns a string containing that number's binary representation as an
+     * IEEE floating point number.
      *
-     * Example: Representing 53.01234 as it would be in memory as an IEEE float
-     *      - Proper function call: toFloat(53, 0.01234);
-     *
-     * @param integer is everything left of the decimal point of the number you want represented as an IEEE flaot
-     * @param decimal is everything right of the decimal point of the number you want represented as an IEEE float
-     * @return a string containing the binary (IEEE) representation of the number you want represented as an IEEE float
+     * @param num is the number whose binary representation as an IEEE float will be found
+     * @return num's binary representation as an IEEE float
      */
-    static std::string toFloat(double const &num);
+    static std::string toFloat(float const &num);
 
     static int getRegisterBits() { return M_REGISTER_BITS; }
 
@@ -43,7 +40,15 @@ private:
 
     static const int M_BIAS = 127;
 
-    static std::string computeSignBit(double const &num);
+    /**
+     * Given a number, computes and returns the sign bit for
+     * if the number were to be represented in binary as an
+     * IEEE float.
+     *
+     * @param num is the number whose sign bit for the above scenario will be found
+     * @return the sign bit of num given the above scenario
+     */
+    static std::string computeSignBit(float const &num);
 };
 
 
