@@ -10,7 +10,7 @@ static std::string toFloat(double const &num) {
 
 }
 
-int IEEEFloat::computeSignBit(double const &num) {
+std::string IEEEFloat::computeSignBit(double const &num) {
     if (num < 0) return 1;
     else return 0;
 }

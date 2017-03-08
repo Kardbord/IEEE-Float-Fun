@@ -43,11 +43,7 @@ private:
 
     static const int M_BIAS = 127;
 
-    static void decAppendMantissa(std::vector<int> &mantissa, double const &decimal);
-
-    static void decToMantissa(std::vector<int> &mantissa, int &exponent, double const &decimal);
-
-    static int computeSignBit(double const &num);
+    static std::string computeSignBit(double const &num);
 };
 
 
