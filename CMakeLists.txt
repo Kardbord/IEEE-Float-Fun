@@ -3,5 +3,5 @@ project(intToFloat)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp IEEEFloat.cpp IEEEFloat.h)
+set(SOURCE_FILES main.cpp IEEEFloat.cpp IEEEFloat.h BaseTwoSciNumber.cpp BaseTwoSciNumber.h)
 add_executable(intToFloat ${SOURCE_FILES})

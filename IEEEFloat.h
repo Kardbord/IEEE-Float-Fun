@@ -49,6 +49,8 @@ private:
      * @return the sign bit of num given the above scenario
      */
     static std::string computeSignBit(float const &num);
+
+    static double toBaseTwo(float const & num);
 };
 
 
