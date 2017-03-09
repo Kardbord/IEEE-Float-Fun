@@ -17,8 +17,3 @@ std::string IEEEFloat::computeSignBit(float const &num) {
     else return "0";
 }
 
-double IEEEFloat::toBaseTwo(float const &num) {
-    return 0;
-}
-
-
