@@ -14,6 +14,12 @@ public:
 
     BaseTwoSciNumber(int const &exp, double const &coef);
 
+    int getExponent() const { return m_exponent; }
+
+    double getCoefficient() const { return m_coefficient; }
+
+    int getBase() const { return M_BASE; }
+
 private:
     int m_exponent;
     const int M_BASE = 2;
