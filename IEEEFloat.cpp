@@ -14,6 +14,8 @@ std::string IEEEFloat::toFloat(float const &num) {
 
     std::string expBits = computeExponentBits(numBaseTwo);
 
+    // TODO: compute mantissa, concatenate signBit, expBits, and mantissaBits to get final answer
+
 
     return "";
 }

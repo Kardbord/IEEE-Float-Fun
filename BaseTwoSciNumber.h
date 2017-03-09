@@ -5,7 +5,7 @@
 #ifndef INTTOFLOAT_BASETWONUMBER_H
 #define INTTOFLOAT_BASETWONUMBER_H
 
-
+// TODO: add documentation
 class BaseTwoSciNumber {
 public:
     BaseTwoSciNumber(float const &num);
