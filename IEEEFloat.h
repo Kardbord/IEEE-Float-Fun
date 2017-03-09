@@ -6,6 +6,7 @@
 #define INTTOFLOAT_IEEEFLOAT_H
 
 #include <vector>
+#include "BaseTwoSciNumber.h"
 
 // TODO: add documentation
 class IEEEFloat {
@@ -48,6 +49,8 @@ private:
      * @return the sign bit of num given the above scenario
      */
     static std::string computeSignBit(float const &num);
+
+    static std::string computeExponentBits(BaseTwoSciNumber const & numBaseTwo);
 };
 
 
