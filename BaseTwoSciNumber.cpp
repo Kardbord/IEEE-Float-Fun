@@ -5,15 +5,15 @@
 #include "BaseTwoSciNumber.h"
 #include <cmath>
 
-BaseTwoSciNumber::BaseTwoSciNumber(float const &num) : m_base(2) {
+BaseTwoSciNumber::BaseTwoSciNumber(float const &num) : M_BASE(2) {
     toBaseTwoSci(num);
 }
 
-BaseTwoSciNumber::BaseTwoSciNumber(double const &num) : m_base(2) {
+BaseTwoSciNumber::BaseTwoSciNumber(double const &num) : M_BASE(2) {
     toBaseTwoSci(num);
 }
 
-BaseTwoSciNumber::BaseTwoSciNumber(int const &exp, double const &coef) : m_base(2), m_exponent(exp),
+BaseTwoSciNumber::BaseTwoSciNumber(int const &exp, double const &coef) : M_BASE(2), m_exponent(exp),
                                                                          m_coefficient(coef) {}
 
 void BaseTwoSciNumber::toBaseTwoSci(double const &num) {
@@ -30,12 +30,12 @@ void BaseTwoSciNumber::toBaseTwoSci(double const &num) {
     if (num > 2) {
         while (coef >= 2) {
             ++exponent;
-            coef = num / std::pow(m_base, (double) exponent);
+            coef = num / std::pow(M_BASE, (double) exponent);
         }
     } else {
         while (coef < 1) {
             --exponent;
-            coef = num / std::pow(m_base, (double) exponent);
+            coef = num / std::pow(M_BASE, (double) exponent);
         }
     }
 
@@ -56,12 +56,12 @@ void BaseTwoSciNumber::toBaseTwoSci(float const &num) {
     if (num > 2) {
         while (coef >= 2) {
             ++exponent;
-            coef = num / std::pow(m_base, (double) exponent);
+            coef = num / std::pow(M_BASE, (double) exponent);
         }
     } else {
         while (coef < 1) {
             --exponent;
-            coef = num / std::pow(m_base, (double) exponent);
+            coef = num / std::pow(M_BASE, (double) exponent);
         }
     }
 

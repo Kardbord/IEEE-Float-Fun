@@ -16,7 +16,7 @@ public:
 
 private:
     int m_exponent;
-    int m_base = 2;
+    const int M_BASE = 2;
     double m_coefficient;
 
     void toBaseTwoSci(double const &num);
