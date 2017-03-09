@@ -18,21 +18,23 @@ BaseTwoSciNumber::BaseTwoSciNumber(int const &exp, double const &coef) : m_base(
 
 void BaseTwoSciNumber::toBaseTwoSci(double const &num) {
 
-    if (num < 2 && num > 1) {
+    if (num < 2 && num >= 1) {
         m_exponent = 0;
         m_coefficient = num;
         return;
     }
 
     double coef = num;
-    int exponent;
+    int exponent = 0;
 
     if (num > 2) {
-        for (exponent = 1; coef > 2; ++exponent) { // TODO: Possible off by one bug for exponent
+        while (coef >= 2) {
+            ++exponent;
             coef = num / std::pow(m_base, (double) exponent);
         }
     } else {
-        for (exponent = -1; coef < 1; --exponent) { // TODO: fix bug where exponent ends up being off be one (one less than it should be)
+        while (coef < 1) {
+            --exponent;
             coef = num / std::pow(m_base, (double) exponent);
         }
     }
@@ -42,23 +44,23 @@ void BaseTwoSciNumber::toBaseTwoSci(double const &num) {
 }
 
 void BaseTwoSciNumber::toBaseTwoSci(float const &num) {
-    if (num < 2 && num > 1) {
+    if (num < 2 && num >= 1) {
         m_exponent = 0;
         m_coefficient = num;
         return;
     }
 
     double coef = num;
-    int exponent;
+    int exponent = 0;
 
     if (num > 2) {
-        exponent = 1;
-        for (exponent; coef > 2; ++exponent) { // TODO: Possible off by one bug for exponent
+        while (coef >= 2) {
+            ++exponent;
             coef = num / std::pow(m_base, (double) exponent);
         }
     } else {
-        exponent = -1;
-        for (exponent; coef < 1; --exponent) {  // TODO: fix bug where exponent ends up being off be one (one less than it should be)
+        while (coef < 1) {
+            --exponent;
             coef = num / std::pow(m_base, (double) exponent);
         }
     }
