@@ -28,13 +28,11 @@ void BaseTwoSciNumber::toBaseTwoSci(double const &num) {
     int exponent;
 
     if (num > 2) {
-        exponent = 1;
-        for (exponent; coef > 2; ++exponent) { // TODO: Possible off by one bug for exponent
+        for (exponent = 1; coef > 2; ++exponent) { // TODO: Possible off by one bug for exponent
             coef = num / std::pow(m_base, (double) exponent);
         }
     } else {
-        exponent = -1;
-        for (exponent; coef < 1; --exponent) { // TODO: fix bug where exponent ends up being off be one (one less than it should be)
+        for (exponent = -1; coef < 1; --exponent) { // TODO: fix bug where exponent ends up being off be one (one less than it should be)
             coef = num / std::pow(m_base, (double) exponent);
         }
     }
