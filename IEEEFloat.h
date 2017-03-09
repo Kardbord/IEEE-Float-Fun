@@ -37,7 +37,6 @@ private:
     static const int M_EXPONENT_BITS = 8;
     static const int M_MANTISSA_BITS = 23;
     static const int M_SIGN_BITS = 1;
-
     static const int M_BIAS = 127;
 
     /**
@@ -50,7 +49,7 @@ private:
      */
     static std::string computeSignBit(float const &num);
 
-    static double toBaseTwo(float const & num);
+    static double toBaseTwo(float const &num);
 };
 
 
