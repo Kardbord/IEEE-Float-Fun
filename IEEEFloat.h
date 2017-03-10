@@ -51,6 +51,8 @@ private:
     static std::string computeSignBit(float const &num);
 
     static std::string computeExponentBits(BaseTwoSciNumber const & numBaseTwo);
+
+    static std::string computeMantissaBits(BaseTwoSciNumber const & numBaseTwo);
 };
 
 

@@ -4,6 +4,7 @@
 
 #include <bitset>
 #include <sstream>
+#include <cmath>
 #include "IEEEFloat.h"
 
 std::string IEEEFloat::toFloat(float const &num) {
@@ -33,3 +34,11 @@ std::string IEEEFloat::computeExponentBits(BaseTwoSciNumber const &numBaseTwo) {
     return std::bitset<M_EXPONENT_BITS>((unsigned long long int) exponent).to_string();
 }
 
+std::string IEEEFloat::computeMantissaBits(BaseTwoSciNumber const &numBaseTwo) {
+    double mantissa = std::abs(numBaseTwo.getCoefficient());
+    if (mantissa > 1) {
+        mantissa -= 1;
+    }
+
+    return std::bitset<M_MANTISSA_BITS>((unsigned long long int) mantissa).to_string();
+}
