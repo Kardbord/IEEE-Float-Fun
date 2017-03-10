@@ -25,9 +25,9 @@ private:
     const int M_BASE = 2;
     double m_coefficient;
 
-    void toBaseTwoSci(double const &num);
+    void toBaseTwoSci(double const &number);
 
-    void toBaseTwoSci(float const &num);
+    void toBaseTwoSci(float const &number);
 };
 
 

@@ -16,7 +16,9 @@ BaseTwoSciNumber::BaseTwoSciNumber(double const &num) : M_BASE(2) {
 BaseTwoSciNumber::BaseTwoSciNumber(int const &exp, double const &coef) : M_BASE(2), m_exponent(exp),
                                                                          m_coefficient(coef) {}
 
-void BaseTwoSciNumber::toBaseTwoSci(double const &num) {
+void BaseTwoSciNumber::toBaseTwoSci(double const &number) {
+
+    double num = std::abs(number);
 
     if (num < 2 && num >= 1) {
         m_exponent = 0;
@@ -43,7 +45,10 @@ void BaseTwoSciNumber::toBaseTwoSci(double const &num) {
     m_exponent = exponent;
 }
 
-void BaseTwoSciNumber::toBaseTwoSci(float const &num) {
+void BaseTwoSciNumber::toBaseTwoSci(float const &number) {
+
+    double num = std::abs(number);
+
     if (num < 2 && num >= 1) {
         m_exponent = 0;
         m_coefficient = num;
@@ -65,6 +70,6 @@ void BaseTwoSciNumber::toBaseTwoSci(float const &num) {
         }
     }
 
-    m_coefficient = coef;
+    m_coefficient = (number > 0) ? coef : -1 * coef;
     m_exponent = exponent;
 }
