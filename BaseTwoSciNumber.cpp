@@ -41,7 +41,7 @@ void BaseTwoSciNumber::toBaseTwoSci(double const &number) {
         }
     }
 
-    m_coefficient = coef;
+    m_coefficient = (number > 0) ? coef : -1 * coef;
     m_exponent = exponent;
 }
 
