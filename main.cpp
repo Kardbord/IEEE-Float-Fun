@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cmath>
 #include "IEEEFloat.h"
-#include "BaseTwoSciNumber.h"
 
 int main() {
 
