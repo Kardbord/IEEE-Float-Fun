@@ -8,7 +8,19 @@
 #include <vector>
 #include "BaseTwoSciNumber.h"
 
+// TODO: add Testing folder with comprehensive test cases for proof of completion
 // TODO: add documentation
+
+/**
+ * This class serves the purpose of providing information about 32-bit, single-precision IEEE floating point decimals,
+ * as well as functionality to provide the binary IEEE floating point representation of a given number.
+ *
+ * See the links below for reference:
+ * https://www.h-schmidt.net/FloatConverter/IEEE754.html
+ * http://www.oxfordmathcenter.com/drupal7/node/43
+ * http://steve.hollasch.net/cgindex/coding/ieeefloat.html
+ * https://en.wikipedia.org/wiki/Single-precision_floating-point_format
+ */
 class IEEEFloat {
 public:
 
