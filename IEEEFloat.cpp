@@ -38,6 +38,7 @@ std::string IEEEFloat::computeExponentBits(BaseTwoSciNumber const &numBaseTwo) {
     return std::bitset<M_EXPONENT_BITS>((unsigned long long int) exponent).to_string();
 }
 
+// See http://www.oxfordmathcenter.com/drupal7/node/43
 std::string IEEEFloat::computeMantissaBits(BaseTwoSciNumber const &numBaseTwo) {
     double mantissa = std::abs(numBaseTwo.getCoefficient());
 
