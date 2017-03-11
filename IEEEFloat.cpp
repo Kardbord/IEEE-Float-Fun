@@ -40,9 +40,15 @@ std::string IEEEFloat::computeExponentBits(BaseTwoSciNumber const &numBaseTwo) {
 
 std::string IEEEFloat::computeMantissaBits(BaseTwoSciNumber const &numBaseTwo) {
     double mantissa = std::abs(numBaseTwo.getCoefficient());
-    if (mantissa > 1) {
-        mantissa -= 1;
+
+    std::string mantissaBits = "";
+
+    for (int i = 0; i < M_MANTISSA_BITS; ++i) {
+        if (mantissa >= 1) --mantissa;
+        mantissa *= 2;
+        if (mantissa >= 1) mantissaBits += "1";
+        else mantissaBits += "0";
     }
 
-    return std::bitset<M_MANTISSA_BITS>((unsigned long long int) mantissa).to_string();
+    return mantissaBits;
 }
