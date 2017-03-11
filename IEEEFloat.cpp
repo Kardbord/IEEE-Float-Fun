@@ -8,17 +8,21 @@
 #include "IEEEFloat.h"
 
 std::string IEEEFloat::toFloat(float const &num) {
+
+    // Compute sign bit
     std::string signBit = computeSignBit(num);
 
     // Represent the number in base two scientific notation to later compute the exponent and mantissa bits
     BaseTwoSciNumber numBaseTwo(num);
 
+    // Compute exponent bits
     std::string expBits = computeExponentBits(numBaseTwo);
 
-    // TODO: compute mantissa, concatenate signBit, expBits, and mantissaBits to get final answer
+    // Compute Mantissa bits
+    std::string mantBits = computeMantissaBits(numBaseTwo);
 
-
-    return "";
+    // Concatenate strings to get the final product
+    return signBit + expBits + mantBits;
 }
 
 std::string IEEEFloat::computeSignBit(float const &num) {
